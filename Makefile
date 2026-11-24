@@ -20,12 +20,14 @@ RTL   := $(wildcard rtl/*.sv)
 BUILD := build
 TESTS := $(patsubst tb/tb_%.sv,%,$(wildcard tb/tb_*.sv))
 
-# --binary   build a runnable sim directly (no C++ harness to write)
-# --timing   allow #delays / clock generation in testbenches
-# --trace    enable $dumpfile/$dumpvars VCD output
-# -Wall      all warnings; they are fatal by default, which is what we want
-#            (add -Wno-fatal temporarily if one blocks you while debugging)
-# -j 0       compile the generated C++ on all CPU cores
+# --binary            build a runnable sim directly (no C++ harness to write)
+# --timing            allow #delays / clock generation in testbenches
+# --trace             enable $dumpfile/$dumpvars VCD output
+# -Wall               all warnings; they are fatal by default, which is what we want
+#                     (add -Wno-fatal temporarily if one blocks you while debugging)
+# -j 0                compile the generated C++ on all CPU cores
+# --timescale 1ns/1ps auto set the timescale for each testbench and rtl modules
+
 VFLAGS := --binary --timing --trace -Wall -j 0 --timescale 1ns/1ps
 
 .PHONY: test clean

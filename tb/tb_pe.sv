@@ -9,7 +9,7 @@ initial begin
 end
 
 initial begin
-    $dumpfile("tb_pe.vcd");
+    $dumpfile("build/tb_pe.vcd");
     $dumpvars(0, tb_pe);
 
     repeat(10) @ (posedge clk); 
