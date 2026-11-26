@@ -16,4 +16,11 @@
 #### Doing 
 - Researching on how a AI accelerator works
 
+### Day 2 - 2026-11-2
 
+#### Done
+- Complete Processing Elements module
+- Created testbench for PE and test different cases.
+
+#### Doing 
+- Moving on to top module `GEMM_top`.
